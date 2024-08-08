@@ -5,13 +5,14 @@
 #include "CareTaker.h"
 
 void demoFactoryMethod() {
+
     SoldierFactory* infantryFactory = new InfantryFactory();
     SoldierFactory* shieldBearerFactory = new ShieldBearerFactory();
     SoldierFactory* boatmanFactory = new BoatmanFactory();
 
-    Soldiers* infantryUnit = infantryFactory->createInfantryUnit();
-    Soldiers* shieldBearerUnit = shieldBearerFactory->createUnit();
-    Soldiers* boatmanUnit = boatmanFactory->createUnit();
+    Soldiers* infantryUnit = infantryFactory->getUnit();
+    Soldiers* shieldBearerUnit = shieldBearerFactory->getUnit();
+    Soldiers* boatmanUnit = boatmanFactory->getUnit();
 
     std::cout << "Factory Method Demo: " << std::endl;
     std::cout << "Infantry Unit Total Health: " << infantryFactory->calculateTotalHealthPerUnit(infantryUnit) << std::endl;
