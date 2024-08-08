@@ -5,7 +5,7 @@ main: $(ofiles)
 	g++ -std=c++98 $(ofiles) -o main
 
 main.o: main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
-	$(gpp_o) main.cpp
+	$(gpp_o) Main.cpp
 
 Boatman.o: Boatman.cpp Boatman.h
 	$(gpp_o) Boatman.cpp
