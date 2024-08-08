@@ -1,4 +1,4 @@
-ofiles = main.o Course.o MainCourse.o Menu.o MenuItem.o Starter.o Dessert.o
+ofiles = main.o Boatman.o BoatmanFactory.o Caretaker.o Infantry.o InfantryFactory.o Memento.o ShieldBearer.o ShieldBearerFactory.o SoldierFactory.o  soldiers.o 
 gpp_o = g++ -c -std=c++11
 
 main: $(ofiles)
