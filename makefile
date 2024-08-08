@@ -6,8 +6,8 @@ gpp_o = g++ -c -std=c++11
 main: $(ofiles)
 	g++ -std=c++98 $(ofiles) -o main
 
-main.o: main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
-	$(gpp_o) main.cpp
+main.o: Main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
+	$(gpp_o) Main.cpp
 
 Boatman.o: Boatman.cpp Boatman.h
 	$(gpp_o) Boatman.cpp
