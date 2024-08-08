@@ -6,9 +6,9 @@
 
 void demoFactoryMethod() {
 
-    SoldierFactory* infantryFactory = new InfantryFactory();
-    SoldierFactory* shieldBearerFactory = new ShieldBearerFactory();
-    SoldierFactory* boatmanFactory = new BoatmanFactory();
+    InfantryFactory* infantryFactory = new InfantryFactory();
+    ShieldBearerFactory* shieldBearerFactory = new ShieldBearerFactory();
+    BoatmanFactory* boatmanFactory = new BoatmanFactory();
 
     Soldiers* infantryUnit = infantryFactory->getUnit();
     Soldiers* shieldBearerUnit = shieldBearerFactory->getUnit();
