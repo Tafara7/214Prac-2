@@ -19,6 +19,7 @@ class Boatman : public Soldiers
         void engage();
         void disengage();
         Soldiers* clonis();
+        Boatman();
 
          
 };
