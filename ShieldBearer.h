@@ -19,6 +19,7 @@ class ShieldBearer : public Soldiers
         void engage();
         void disengage();
         Soldiers* clonis();
+        ShieldBearer();
          
 };
 

@@ -19,6 +19,7 @@ class Infantry : public Soldiers
         void engage();
         void disengage();
         Soldiers* clonis();
+        Infantry();
 };
 
 #endif
