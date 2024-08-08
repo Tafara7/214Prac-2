@@ -21,7 +21,14 @@ class SoldierFactory
             return createUnit();
         }
 
+        int getHealth(Soldiers* unit)
+        {
+            return calculateTotalHealthPerUnit( unit);
+        }
+
        
 };
 
 #endif
+
+
