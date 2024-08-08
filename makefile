@@ -1,13 +1,11 @@
-# Variables
-ofiles = main.o Boatman.o BoatmanFactory.o Caretaker.o Infantry.o InfantryFactory.o Memento.o ShieldBearer.o ShieldBearerFactory.o SoldierFactory.o soldiers.o
+ofiles = main.o Boatman.o BoatmanFactory.o Caretaker.o Infantry.o InfantryFactory.o Memento.o ShieldBearer.o ShieldBearerFactory.o SoldierFactory.o  soldiers.o 
 gpp_o = g++ -c -std=c++11
 
-# Targets
 main: $(ofiles)
 	g++ -std=c++98 $(ofiles) -o main
 
-main.o: Main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
-	$(gpp_o) Main.cpp
+main.o: main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
+	$(gpp_o) main.cpp
 
 Boatman.o: Boatman.cpp Boatman.h
 	$(gpp_o) Boatman.cpp
@@ -33,11 +31,13 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h
 ShieldBearerFactory.o: ShieldBearerFactory.cpp ShieldBearerFactory.h
 	$(gpp_o) ShieldBearerFactory.cpp
 
-SoldierFactory.o: SoldierFactory.cpp SoldierFactory.h
+ShieldBearerFactory.o: SoldierFactory.cpp SoldierFactory.h
 	$(gpp_o) SoldierFactory.cpp
+
 
 soldiers.o: soldiers.cpp soldiers.h
 	$(gpp_o) soldiers.cpp
+
 
 run: main
 	./main
