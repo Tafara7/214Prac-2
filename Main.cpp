@@ -9,7 +9,7 @@
 
 void demoFactoryMethod() {
 
-    InfantryFactory* infantryFactory = new InfantryFactory();
+    SoldierFactory* infantryFactory = new InfantryFactory();
     SoldierFactory* shieldBearerFactory = new ShieldBearerFactory();
     SoldierFactory* boatmanFactory = new BoatmanFactory();
 
@@ -31,17 +31,20 @@ void demoFactoryMethod() {
 
 }
 
-// void demoPrototype() {
-//     Soldiers* originalInfantry = new Infantry();
-//     Soldiers* clonedInfantry = originalInfantry->clonis();
+void demoPrototype() {
+    Soldiers* originalInfantry = new Infantry();
+    Soldiers* clonedInfantry = originalInfantry->clonis();
 
-//     std::cout << "\nPrototype Pattern Demo: " << std::endl;
-//     std::cout << "Original Infantry Unit Name: " << originalInfantry->unitName() << std::endl;
-//     std::cout << "Cloned Infantry Unit Name: " << clonedInfantry->unitName() << std::endl;
+    std::cout << "\nPrototype Pattern Demo: " << std::endl;
+    std::cout << "Original Infantry Unit Name: " << originalInfantry->getName() << std::endl;
+    std::cout << "Original Infantry Health Name: " << originalInfantry->getHealth() << std::endl;
+    std::cout << "Cloned Infantry Unit Name: " << clonedInfantry->getName() << std::endl;
+    std::cout << "Cloned Infantry Health Name: " << clonedInfantry->getHealth() << std::endl;
 
-//     delete originalInfantry;
-//     delete clonedInfantry;
-// }
+
+    delete originalInfantry;
+    delete clonedInfantry;
+}
 
 
 void demoTemplateMethod() {
@@ -62,32 +65,32 @@ void demoTemplateMethod() {
     delete boatman;
 }
 
-// void demoMemento() {
-//     Soldiers* infantry = new Infantry();
-//     CareTaker careTaker;
+void demoMemento() {
+    Soldiers* infantry = new Infantry();
+    CareTaker careTaker;
 
-//     // Save state
-//     careTaker.addMemento(infantry->militusMemento());
+    // Save state
+    careTaker.addMemento(infantry->militusMemento());
 
-//     // Modify state
-//     infantry->healthPerSoldier = 200;
+    // Modify state
+    infantry->setHealth(200);
 
-//     std::cout << "\nMemento Pattern Demo: " << std::endl;
-//     std::cout << "Infantry Health before restore: " << infantry->healthPerSoldier << std::endl;
+    std::cout << "\nMemento Pattern Demo: " << std::endl;
+    std::cout << "Infantry Health before restore: " << infantry->getHealth() << std::endl;
 
-//     // Restore state
-//     infantry->vivificaMemento(careTaker.getMemento(0));
+    // Restore state
+    infantry->vivificaMemento(careTaker.getMemento(0));
 
-//     std::cout << "Infantry Health after restore: " << infantry->healthPerSoldier << std::endl;
+    std::cout << "Infantry Health after restore: " << infantry->getHealth() << std::endl;
 
-//     delete infantry;
-// }
+    delete infantry;
+}
 
 int main() {
     demoFactoryMethod();
-    // demoPrototype();
+    demoPrototype();
     demoTemplateMethod();
-    // demoMemento();
+    demoMemento();
 
     return 0;
 }

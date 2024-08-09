@@ -1,6 +1,5 @@
 #include "Infantry.h"
 
-// Constructor
 Infantry::Infantry() {
     healthPerSolider = 100;
     damagePerSolider = 50;
@@ -26,12 +25,10 @@ void Infantry::rest() {
     std::cout << "Infantry is resting." << std::endl;
 }
 
-// Prototype
 Soldiers* Infantry::clonis() {
     return new Infantry(*this);
 }
 
-// Engage and Disengage
 void Infantry::engage() {
     Soldiers::engage();
 }

@@ -10,7 +10,7 @@ class Infantry : public Soldiers
         int damagePerSolider;
         int defencePerSolider;
         int amountOfSoldiersPerUnit;
-        std::string unitName;
+        // std::string unitName;
         void prepare() override;
         void execute() override;
         void retreat() override;
@@ -18,7 +18,7 @@ class Infantry : public Soldiers
     public:
         void engage();
         void disengage();
-        Soldiers* clonis();
+        Soldiers* clonis() override;
         Infantry();
 };
 

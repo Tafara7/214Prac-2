@@ -1,10 +1,10 @@
-ofiles = main.o Boatman.o BoatmanFactory.o Caretaker.o Infantry.o InfantryFactory.o Memento.o ShieldBearer.o ShieldBearerFactory.o SoldierFactory.o  soldiers.o 
+ofiles = main.o Boatman.o BoatmanFactory.o Caretaker.o Infantry.o InfantryFactory.o Memento.o ShieldBearer.o ShieldBearerFactory.o SoldierFactory.o  Soldiers.o 
 gpp_o = g++ -c -std=c++11
 
 main: $(ofiles)
-	g++ -std=c++98 $(ofiles) -o main
+	g++ -std=c++11 $(ofiles) -o main
 
-main.o: main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h soldiers.h
+main.o: Main.cpp Boatman.h BoatmanFactory.h Caretaker.h Infantry.h InfantryFactory.h Memento.h ShieldBearer.h ShieldBearerFactory.h SoldierFactory.h Soldiers.h
 	$(gpp_o) Main.cpp
 
 Boatman.o: Boatman.cpp Boatman.h
@@ -31,8 +31,8 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h
 ShieldBearerFactory.o: ShieldBearerFactory.cpp ShieldBearerFactory.h
 	$(gpp_o) ShieldBearerFactory.cpp
 
-soldiers.o: soldiers.cpp soldiers.h
-	$(gpp_o) soldiers.cpp
+Soldiers.o: Soldiers.cpp Soldiers.h
+	$(gpp_o) Soldiers.cpp
 
 
 run: main

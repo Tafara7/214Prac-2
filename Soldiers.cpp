@@ -30,8 +30,51 @@ void Soldiers::vivificaMemento(Memento* mem) {
     unitName = mem->unitName;
 }
 
+std::string Soldiers::getName() const {
+    return unitName;
+}
+
+int Soldiers::getHealth() const {
+    return healthPerSoldier;
+}
+
+int Soldiers::getDamage() {
+    return damagePerSoldier;
+}
+
+int Soldiers::getDefence() {
+    return defencePerSoldier;
+}
+
+int Soldiers::getAmountOfSoldiers() {
+    return amountOfSoldiersPerUnit;
+}
+
+void Soldiers::setName(std::string name) {
+    unitName = name;
+}
+
+void Soldiers::setHealth(int health) {
+    healthPerSoldier = health;
+}
+
+void Soldiers::setDamage(int damage) {
+    damagePerSoldier = damage;
+}
+
+void Soldiers::setDefence(int defence) {
+    defencePerSoldier = defence;
+}
+
+void Soldiers::setAmountOfSoldiers(int amount) {
+    amountOfSoldiersPerUnit = amount;
+}
+
 // Abstract methods
 void Soldiers::prepare() {}
 void Soldiers::execute() {}
 void Soldiers::retreat() {}
 void Soldiers::rest() {}
+
+
+

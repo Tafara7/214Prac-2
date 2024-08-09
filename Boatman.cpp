@@ -1,6 +1,5 @@
 #include "Boatman.h"
 
-// Constructor
 Boatman::Boatman() {
     healthPerSolider = 80;
     damagePerSolider = 70;
@@ -26,12 +25,10 @@ void Boatman::rest() {
     std::cout << "Boatman is resting." << std::endl;
 }
 
-// Prototype
 Soldiers* Boatman::clonis() {
     return new Boatman(*this);
 }
 
-// Engage and Disengage
 void Boatman::engage() {
     Soldiers::engage();
 }

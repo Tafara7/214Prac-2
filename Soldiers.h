@@ -13,9 +13,21 @@ class Soldiers
     public:
         void engage();
         void disengage();
-        Soldiers* clonis();
+        virtual Soldiers* clonis() = 0;
         Memento* militusMemento();
         void vivificaMemento(Memento* mem); 
+        //getter methods
+        std::string getName() const;
+        int getHealth() const;
+        int getDamage();
+        int getDefence();
+        int getAmountOfSoldiers();
+        //setter methods
+        void setName(std::string name);
+        void setHealth(int health);
+        void setDamage(int damage);
+        void setDefence(int defence);
+        void setAmountOfSoldiers(int amount);
     protected:
         int healthPerSoldier;
         int damagePerSoldier;
