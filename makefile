@@ -31,10 +31,6 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h
 ShieldBearerFactory.o: ShieldBearerFactory.cpp ShieldBearerFactory.h
 	$(gpp_o) ShieldBearerFactory.cpp
 
-ShieldBearerFactory.o: SoldierFactory.cpp SoldierFactory.h
-	$(gpp_o) SoldierFactory.cpp
-
-
 soldiers.o: soldiers.cpp soldiers.h
 	$(gpp_o) soldiers.cpp
 

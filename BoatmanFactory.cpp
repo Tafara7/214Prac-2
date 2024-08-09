@@ -6,13 +6,13 @@ Soldiers* BoatmanFactory::createUnit() {
 }
 
 int BoatmanFactory::calculateTotalHealthPerUnit(Soldiers* unit) {
-    return calculateTotalHealthPerUnit(createUnit());
+    return unit->healthPerSoldier * unit->amountOfSoldiersPerUnit;
 }
 
 int BoatmanFactory::calculateTotalDamagePerUnit(Soldiers* unit) {
-    return calculateTotalDamagePerUnit(createUnit());
+    return unit->damagePerSoldier * unit->amountOfSoldiersPerUnit;
 }
 
 int BoatmanFactory::calculateTotalDefencePerUnit(Soldiers* unit) {
-    return calculateTotalDefencePerUnit(createUnit());
+    return unit->defencePerSoldier * unit->amountOfSoldiersPerUnit;
 }

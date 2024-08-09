@@ -6,13 +6,13 @@ Soldiers* InfantryFactory::createUnit() {
 }
 
 int InfantryFactory::calculateTotalHealthPerUnit(Soldiers* unit) {
-    return calculateTotalHealthPerUnit(createUnit());
+    return unit->healthPerSoldier * unit->amountOfSoldiersPerUnit;
 }
 
 int InfantryFactory::calculateTotalDamagePerUnit(Soldiers* unit) {
-    return calculateTotalDamagePerUnit(createUnit());
+    return unit->damagePerSoldier * unit->amountOfSoldiersPerUnit;
 }
 
 int InfantryFactory::calculateTotalDefencePerUnit(Soldiers* unit) {
-    return calculateTotalDefencePerUnit(createUnit());
+    return unit->defencePerSoldier * unit->amountOfSoldiersPerUnit;
 }

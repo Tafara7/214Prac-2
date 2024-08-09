@@ -6,15 +6,10 @@
 class InfantryFactory : public SoldierFactory
 {
     public:
-        Soldiers* createInfantryUnit() {
-            return createUnit();
-        }
+        Soldiers* createUnit() override;
         int calculateTotalHealthPerUnit(Soldiers* unit);
         int calculateTotalDamagePerUnit(Soldiers* unit);
-        int calculateTotalDefencePerUnit(Soldiers* unit);          
-
-    protected:
-        Soldiers* createUnit() override;
+        int calculateTotalDefencePerUnit(Soldiers* unit);                  
 };
 
 #endif

@@ -15,17 +15,10 @@ class SoldierFactory
         virtual int calculateTotalDefencePerUnit(Soldiers* unit);  
 
     public:
-
-        Soldiers * getUnit()
-        {
-            return createUnit();
-        }
-
-        int getHealth(Soldiers* unit)
-        {
-            return calculateTotalHealthPerUnit( unit);
-        }
-
+        Soldiers* getUnit();
+        int getHealth(Soldiers* unit);
+        int getDamage(Soldiers* unit);
+        int getDefence(Soldiers* unit);
        
 };
 

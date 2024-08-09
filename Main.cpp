@@ -2,22 +2,25 @@
 #include "InfantryFactory.h"
 #include "ShieldBearerFactory.h"
 #include "BoatmanFactory.h"
+#include "Infantry.h"
+#include "ShieldBearer.h"
+#include "Boatman.h"
 #include "CareTaker.h"
 
 void demoFactoryMethod() {
 
     InfantryFactory* infantryFactory = new InfantryFactory();
-    ShieldBearerFactory* shieldBearerFactory = new ShieldBearerFactory();
-    BoatmanFactory* boatmanFactory = new BoatmanFactory();
+    SoldierFactory* shieldBearerFactory = new ShieldBearerFactory();
+    SoldierFactory* boatmanFactory = new BoatmanFactory();
 
     Soldiers* infantryUnit = infantryFactory->getUnit();
     Soldiers* shieldBearerUnit = shieldBearerFactory->getUnit();
     Soldiers* boatmanUnit = boatmanFactory->getUnit();
 
     std::cout << "Factory Method Demo: " << std::endl;
-    std::cout << "Infantry Unit Total Health: " << infantryFactory->calculateTotalHealthPerUnit(infantryUnit) << std::endl;
-    std::cout << "ShieldBearer Unit Total Damage: " << shieldBearerFactory->calculateTotalDamagePerUnit(shieldBearerUnit) << std::endl;
-    std::cout << "Boatman Unit Total Defence: " << boatmanFactory->calculateTotalDefencePerUnit(boatmanUnit) << std::endl;
+    std::cout << "Infantry Unit Total Health: " << infantryFactory->getHealth(infantryUnit) << std::endl;
+    std::cout << "ShieldBearer Unit Total Damage: " << shieldBearerFactory->getDamage(shieldBearerUnit) << std::endl;
+    std::cout << "Boatman Unit Total Defence: " << boatmanFactory->getDefence(boatmanUnit) << std::endl;
 
     delete infantryFactory;
     delete shieldBearerFactory;
@@ -25,6 +28,7 @@ void demoFactoryMethod() {
     delete infantryUnit;
     delete shieldBearerUnit;
     delete boatmanUnit;
+
 }
 
 // void demoPrototype() {
@@ -39,23 +43,24 @@ void demoFactoryMethod() {
 //     delete clonedInfantry;
 // }
 
-// void demoTemplateMethod() {
-//     Soldiers* infantry = new Infantry();
-//     Soldiers* shieldBearer = new ShieldBearer();
-//     Soldiers* boatman = new Boatman();
 
-//     std::cout << "\nTemplate Method Pattern Demo: " << std::endl;
-//     std::cout << "Infantry engaging: " << std::endl;
-//     infantry->engage();
-//     std::cout << "ShieldBearer disengaging: " << std::endl;
-//     shieldBearer->disengage();
-//     std::cout << "Boatman engaging: " << std::endl;
-//     boatman->engage();
+void demoTemplateMethod() {
+    Soldiers* infantry = new Infantry();
+    Soldiers* shieldBearer = new ShieldBearer();
+    Soldiers* boatman = new Boatman();
 
-//     delete infantry;
-//     delete shieldBearer;
-//     delete boatman;
-// }
+    std::cout << "\nTemplate Method Pattern Demo: " << std::endl;
+    std::cout << "Infantry engaging: " << std::endl;
+    infantry->engage();
+    std::cout << "ShieldBearer disengaging: " << std::endl;
+    shieldBearer->disengage();
+    std::cout << "Boatman engaging: " << std::endl;
+    boatman->engage();
+
+    delete infantry;
+    delete shieldBearer;
+    delete boatman;
+}
 
 // void demoMemento() {
 //     Soldiers* infantry = new Infantry();
@@ -81,7 +86,7 @@ void demoFactoryMethod() {
 int main() {
     demoFactoryMethod();
     // demoPrototype();
-    // demoTemplateMethod();
+    demoTemplateMethod();
     // demoMemento();
 
     return 0;

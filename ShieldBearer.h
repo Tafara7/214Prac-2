@@ -11,10 +11,10 @@ class ShieldBearer : public Soldiers
         int defencePerSolider;
         int amountOfSoldiersPerUnit;
         std::string unitName;
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+        void prepare() override;
+        void execute() override;
+        void retreat() override;
+        void rest() override;
     public:
         void engage();
         void disengage();

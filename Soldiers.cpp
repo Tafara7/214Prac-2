@@ -14,7 +14,6 @@ void Soldiers::disengage() {
 
 // Prototype
 Soldiers* Soldiers::clonis() {
-    // This should be overridden in derived classes.
     return NULL;
 }
 

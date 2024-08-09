@@ -4,6 +4,9 @@
 #include "Memento.h"
 
 class SoldierFactory;
+class InfantryFactory;
+class ShieldBearerFactory;
+class BoatmanFactory;
 
 class Soldiers
 {
@@ -20,12 +23,15 @@ class Soldiers
         int amountOfSoldiersPerUnit;
         std::string unitName;
     private:
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+        virtual void prepare() = 0;
+        virtual void execute() = 0;
+        virtual void retreat() = 0;
+        virtual void rest() = 0;
     
         friend class SoldierFactory;
+        friend class InfantryFactory;
+        friend class ShieldBearerFactory;
+        friend class BoatmanFactory;
 };
 
 #endif

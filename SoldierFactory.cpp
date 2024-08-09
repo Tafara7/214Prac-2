@@ -11,3 +11,23 @@ int SoldierFactory::calculateTotalDamagePerUnit(Soldiers* unit) {
 int SoldierFactory::calculateTotalDefencePerUnit(Soldiers* unit) {
     return unit->defencePerSoldier * unit->amountOfSoldiersPerUnit;
 }
+
+Soldiers* SoldierFactory::getUnit()
+{
+    return createUnit();
+}
+
+int SoldierFactory::getHealth(Soldiers* unit)
+{
+    return calculateTotalHealthPerUnit(unit);
+}
+
+int SoldierFactory::getDamage(Soldiers* unit)
+{
+    return calculateTotalDamagePerUnit(unit);
+}
+
+int SoldierFactory::getDefence(Soldiers* unit)
+{
+    return calculateTotalDefencePerUnit(unit);
+}
