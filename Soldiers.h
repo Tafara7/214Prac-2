@@ -5,7 +5,6 @@
 
 class SoldierFactory;
 class InfantryFactory;
-class ShieldBearerFactory;
 class BoatmanFactory;
 
 class Soldiers
@@ -19,9 +18,9 @@ class Soldiers
         //getter methods
         std::string getName() const;
         int getHealth() const;
-        int getDamage();
-        int getDefence();
-        int getAmountOfSoldiers();
+        int getDamage() const;
+        int getDefence() const;
+        int getAmountOfSoldiers() const;
         //setter methods
         void setName(std::string name);
         void setHealth(int health);

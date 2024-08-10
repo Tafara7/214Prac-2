@@ -1,14 +1,13 @@
 #include "Infantry.h"
 
 Infantry::Infantry() {
-    healthPerSolider = 100;
-    damagePerSolider = 50;
-    defencePerSolider = 30;
-    amountOfSoldiersPerUnit = 10;
+    healthPerSoldier = 100;
+    damagePerSoldier = 20;
+    defencePerSoldier = 10;
+    amountOfSoldiersPerUnit = 100;
     unitName = "Infantry";
 }
 
-// Template Method
 void Infantry::prepare() {
     std::cout << "Infantry is preparing for battle." << std::endl;
 }

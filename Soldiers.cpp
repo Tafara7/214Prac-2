@@ -1,7 +1,6 @@
 #include "Soldiers.h"
 #include "Memento.h"
 
-// Template Method
 void Soldiers::engage() {
     prepare();
     execute();
@@ -12,12 +11,10 @@ void Soldiers::disengage() {
     rest();
 }
 
-// Prototype
 Soldiers* Soldiers::clonis() {
     return NULL;
 }
 
-// Memento
 Memento* Soldiers::militusMemento() {
     return new Memento(healthPerSoldier, damagePerSoldier, defencePerSoldier, amountOfSoldiersPerUnit, unitName);
 }
@@ -38,15 +35,15 @@ int Soldiers::getHealth() const {
     return healthPerSoldier;
 }
 
-int Soldiers::getDamage() {
+int Soldiers::getDamage() const {
     return damagePerSoldier;
 }
 
-int Soldiers::getDefence() {
+int Soldiers::getDefence() const {
     return defencePerSoldier;
 }
 
-int Soldiers::getAmountOfSoldiers() {
+int Soldiers::getAmountOfSoldiers() const {
     return amountOfSoldiersPerUnit;
 }
 
@@ -70,7 +67,6 @@ void Soldiers::setAmountOfSoldiers(int amount) {
     amountOfSoldiersPerUnit = amount;
 }
 
-// Abstract methods
 void Soldiers::prepare() {}
 void Soldiers::execute() {}
 void Soldiers::retreat() {}

@@ -6,11 +6,6 @@
 class Infantry : public Soldiers
 {
     private:
-        int healthPerSolider;
-        int damagePerSolider;
-        int defencePerSolider;
-        int amountOfSoldiersPerUnit;
-        // std::string unitName;
         void prepare() override;
         void execute() override;
         void retreat() override;

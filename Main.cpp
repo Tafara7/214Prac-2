@@ -7,7 +7,18 @@
 #include "Boatman.h"
 #include "CareTaker.h"
 
+void printHeader(const std::string& title) {
+    std::cout << "\033[1;34m" << "============================" << std::endl;
+    std::cout << title << std::endl;
+    std::cout << "============================" << "\033[0m" << std::endl;
+}
+
+void printSubHeader(const std::string& subtitle) {
+    std::cout << "\033[1;33m" << subtitle << "\033[0m" << std::endl;
+}
+
 void demoFactoryMethod() {
+    printHeader("Factory Method Pattern Demo");
 
     SoldierFactory* infantryFactory = new InfantryFactory();
     SoldierFactory* shieldBearerFactory = new ShieldBearerFactory();
@@ -17,10 +28,17 @@ void demoFactoryMethod() {
     Soldiers* shieldBearerUnit = shieldBearerFactory->getUnit();
     Soldiers* boatmanUnit = boatmanFactory->getUnit();
 
-    std::cout << "Factory Method Demo: " << std::endl;
-    std::cout << "Infantry Unit Total Health: " << infantryFactory->getHealth(infantryUnit) << std::endl;
-    std::cout << "ShieldBearer Unit Total Damage: " << shieldBearerFactory->getDamage(shieldBearerUnit) << std::endl;
-    std::cout << "Boatman Unit Total Defence: " << boatmanFactory->getDefence(boatmanUnit) << std::endl;
+    printSubHeader("Infantry Unit");
+    std::cout << "Total Health: " << infantryFactory->getHealth(infantryUnit) << std::endl;
+    std::cout << std::endl;
+
+    printSubHeader("ShieldBearer Unit");
+    std::cout << "Total Damage: " << shieldBearerFactory->getDamage(shieldBearerUnit) << std::endl;
+    std::cout << std::endl;
+
+    printSubHeader("Boatman Unit");
+    std::cout << "Total Defence: " << boatmanFactory->getDefence(boatmanUnit) << std::endl;
+    std::cout << std::endl;
 
     delete infantryFactory;
     delete shieldBearerFactory;
@@ -28,37 +46,52 @@ void demoFactoryMethod() {
     delete infantryUnit;
     delete shieldBearerUnit;
     delete boatmanUnit;
-
 }
 
 void demoPrototype() {
+    printHeader("Prototype Pattern Demo");
+
     Soldiers* originalInfantry = new Infantry();
     Soldiers* clonedInfantry = originalInfantry->clonis();
 
-    std::cout << "\nPrototype Pattern Demo: " << std::endl;
-    std::cout << "Original Infantry Unit Name: " << originalInfantry->getName() << std::endl;
-    std::cout << "Original Infantry Health Name: " << originalInfantry->getHealth() << std::endl;
-    std::cout << "Cloned Infantry Unit Name: " << clonedInfantry->getName() << std::endl;
-    std::cout << "Cloned Infantry Health Name: " << clonedInfantry->getHealth() << std::endl;
+    printSubHeader("Original Infantry Stats");
+    std::cout << "Unit Name: " << originalInfantry->getName() << std::endl;
+    std::cout << "Health: " << originalInfantry->getHealth() << std::endl;
+    std::cout << "Damage: " << originalInfantry->getDamage() << std::endl;
+    std::cout << "Defence: " << originalInfantry->getDefence() << std::endl;
+    std::cout << "Amount of soldiers: " << originalInfantry->getAmountOfSoldiers() << std::endl;
+    std::cout << std::endl;
 
+    printSubHeader("Cloned Infantry Stats");
+    std::cout << "Unit Name: " << clonedInfantry->getName() << std::endl;
+    std::cout << "Health: " << clonedInfantry->getHealth() << std::endl;
+    std::cout << "Damage: " << clonedInfantry->getDamage() << std::endl;
+    std::cout << "Defence: " << clonedInfantry->getDefence() << std::endl;
+    std::cout << "Amount of soldiers: " << clonedInfantry->getAmountOfSoldiers() << std::endl;
+    std::cout << std::endl;
 
     delete originalInfantry;
     delete clonedInfantry;
 }
 
-
 void demoTemplateMethod() {
+    printHeader("Template Method Pattern Demo");
+
     Soldiers* infantry = new Infantry();
     Soldiers* shieldBearer = new ShieldBearer();
     Soldiers* boatman = new Boatman();
 
-    std::cout << "\nTemplate Method Pattern Demo: " << std::endl;
-    std::cout << "Infantry engaging: " << std::endl;
+    printSubHeader("Infantry engaging");
     infantry->engage();
-    std::cout << "ShieldBearer disengaging: " << std::endl;
+    std::cout << std::endl;
+
+    printSubHeader("ShieldBearer disengaging");
     shieldBearer->disengage();
-    std::cout << "Boatman engaging: " << std::endl;
+    std::cout << std::endl;
+
+    printSubHeader("Boatman engaging");
     boatman->engage();
+    std::cout << std::endl;
 
     delete infantry;
     delete shieldBearer;
@@ -66,6 +99,8 @@ void demoTemplateMethod() {
 }
 
 void demoMemento() {
+    printHeader("Memento Pattern Demo");
+
     Soldiers* infantry = new Infantry();
     CareTaker careTaker;
 
@@ -75,13 +110,13 @@ void demoMemento() {
     // Modify state
     infantry->setHealth(200);
 
-    std::cout << "\nMemento Pattern Demo: " << std::endl;
     std::cout << "Infantry Health before restore: " << infantry->getHealth() << std::endl;
 
     // Restore state
     infantry->vivificaMemento(careTaker.getMemento(0));
 
     std::cout << "Infantry Health after restore: " << infantry->getHealth() << std::endl;
+    std::cout << std::endl;
 
     delete infantry;
 }
