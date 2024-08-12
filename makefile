@@ -44,6 +44,10 @@ Soldiers.o: Soldiers.cpp Soldiers.h
 run: main
 	./main
 
+# Run the program with Valgrind
+valgrind: main
+	valgrind --leak-check=full --track-origins=yes ./main
+
 # Clean up
 clean:
 	rm -f *.o main
